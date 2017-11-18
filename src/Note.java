@@ -1,18 +1,18 @@
 public class Note {
 
-    private int note;
+    private float note = 0;
     private Matiere matiere;
 
-    public Note(int note, Matiere matiere) {
+    public Note(float note, Matiere matiere) {
         this.note = note;
         this.matiere = matiere;
     }
 
-    public int getNote() {
+    public float getNote() {
         return note;
     }
 
-    public void setNote(int note) {
+    public void setNote(float note) {
         this.note = note;
     }
 

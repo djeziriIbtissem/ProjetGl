@@ -4,11 +4,11 @@ public class Ecole {
 
     private String nomEcole;
     private String siteInternet;
-    private ArrayList <Departement>departements=new ArrayList<>();
+    private ArrayList<Departement> listDepartements = new ArrayList<>();
 
-    public Ecole(String siteInternet , String nomEcole) {
+    public Ecole(String siteInternet, String nomEcole) {
         this.siteInternet = siteInternet;
-        this.nomEcole=nomEcole;
+        this.nomEcole = nomEcole;
     }
 
     public String getSiteInternet() {
@@ -19,12 +19,12 @@ public class Ecole {
         this.siteInternet = siteInternet;
     }
 
-    public ArrayList<Departement> getDepartements() {
-        return departements;
+    public ArrayList<Departement> getListDepartements() {
+        return listDepartements;
     }
 
-    public void setDepartements(ArrayList<Departement> departements) {
-        this.departements = departements;
+    public void setListDepartements(ArrayList<Departement> listDepartements) {
+        this.listDepartements = listDepartements;
     }
 
     public String getNomEcole() {
@@ -35,24 +35,27 @@ public class Ecole {
         this.nomEcole = nomEcole;
     }
 
+
+    //affichage des departement
+    public void affichageDepartement() {
+        System.out.println("Les departements de " + nomEcole + " sont :");
+        for (int i = 0; i < listDepartements.size(); i++) {
+            System.out.println(i + 1 + "- " + listDepartements.get(i).getNomDepartement());
+        }
+    }
+
+    //ajouter un departement
+    public void addDepartement(Departement departement) {
+        listDepartements.add(departement);
+    }
+
+
     @Override
     public String toString() {
         return "Ecole{" +
                 "nomEcole='" + nomEcole + '\'' +
                 ", siteInternet='" + siteInternet + '\'' +
+                ", listDepartements=" + listDepartements +
                 '}';
-    }
-
-    public void affichageDepartement(){
-        for (int i = 0; i <departements.size() ; i++) {
-            System.out.println(departements.get(i).getNomDepartement());
-        }
-
-    }
-
-
-    public void addDepartement(Departement departement){
-        departements.add(departement);
-
     }
 }

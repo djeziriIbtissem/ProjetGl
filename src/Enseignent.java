@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Comparator;
 
 public class Enseignent {
 
@@ -7,11 +6,12 @@ public class Enseignent {
     private String prenom;
     private String numTel;
     private String email;
-    private int dateFonction;
-    private String grade;
-    private ArrayList<Matiere> matieres = new ArrayList<>();
+    private Dates dateFonction;
+    private GradeEnseignant grade;
 
-    public Enseignent(String nom, String prenom, String numTel, String email, int dateFonction, String grade) {
+    private ArrayList<Matiere> listMatieres = new ArrayList<>();
+
+    public Enseignent(String nom, String prenom, String numTel, String email, Dates dateFonction, GradeEnseignant grade) {
         this.nom = nom;
         this.prenom = prenom;
         this.numTel = numTel;
@@ -52,29 +52,51 @@ public class Enseignent {
         this.email = email;
     }
 
-    public int getDateFonction() {
+    public Dates getDateFonction() {
         return dateFonction;
     }
 
-    public void setDateFonction(int dateFonction) {
+    public void setDateFonction(Dates dateFonction) {
         this.dateFonction = dateFonction;
     }
 
-    public String getGrade() {
+    public GradeEnseignant getGrade() {
         return grade;
     }
 
-    public void setGrade(String grade) {
+    public void setGrade(GradeEnseignant grade) {
         this.grade = grade;
     }
 
-    public ArrayList<Matiere> getMatieres() {
-        return matieres;
+    public ArrayList<Matiere> getListMatieres() {
+        return listMatieres;
     }
 
-    public void setMatieres(ArrayList<Matiere> matieres) {
-        this.matieres = matieres;
+    public void setListMatieres(ArrayList<Matiere> listMatieres) {
+        this.listMatieres = listMatieres;
     }
+
+
+    //affichage de la fiche d'un enseignant
+    public void afficheFiche() {
+        System.out.println(this);
+    }
+
+    //affiche les matiere de l'enseignant
+    public void affichageMatiereParEnseignant() {
+
+        System.out.println("\n" + nom + " enseigne : ");
+        for (int i = 0; i < listMatieres.size(); i++) {
+            System.out.println("-la matiere " + listMatieres.get(i).getNom());
+        }
+    }
+
+
+    public void addMatiere(Matiere matiere) {
+        listMatieres.add(matiere);
+        matiere.addEnseignant(this);
+    }
+
 
     @Override
     public String toString() {
@@ -83,26 +105,9 @@ public class Enseignent {
                 ", prenom='" + prenom + '\'' +
                 ", numTel='" + numTel + '\'' +
                 ", email='" + email + '\'' +
-                ", dateFonction='" + dateFonction + '\'' +
+                ", dateFonction=" + dateFonction +
                 ", grade='" + grade + '\'' +
+                ", listMatieres=" + listMatieres +
                 '}';
     }
-
-    public void afficheFiche() {
-        System.out.println(this);
-    }
-
-    public void affichageMatiereParEnseignant() {
-        for (int i = 0; i < matieres.size(); i++) {
-            System.out.println("la matiere " + i + matieres.get(i).getNom());
-
-        }
-    }
-
-
-
-    public void addMatiere(Matiere matiere) {
-        matieres.add(matiere);
-    }
-
 }
