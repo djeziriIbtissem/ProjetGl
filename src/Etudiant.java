@@ -1,55 +1,18 @@
 import java.util.ArrayList;
 
-public class Etudiant {
+public class Etudiant extends Personne {
 
-    private String nom;
-    private String prenom;
-    private String numTel;
-    private String email;
+
     private Dates dateEntre;
 
     private ArrayList<Note> listNotes = new ArrayList<>();
     private ArrayList<Matiere> listMatieres = new ArrayList<>();
 
     public Etudiant(String nom, String prenom, String numTel, String email, Dates dateEntre) {
-        this.nom = nom;
-        this.prenom = prenom;
-        this.numTel = numTel;
-        this.email = email;
+        super(nom, prenom, numTel, email);
         this.dateEntre = dateEntre;
     }
 
-    public String getNom() {
-        return nom;
-    }
-
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    public String getPrenom() {
-        return prenom;
-    }
-
-    public void setPrenom(String prenom) {
-        this.prenom = prenom;
-    }
-
-    public String getNumTel() {
-        return numTel;
-    }
-
-    public void setNumTel(String numTel) {
-        this.numTel = numTel;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
 
     public Dates getDateEntre() {
         return dateEntre;
@@ -129,9 +92,9 @@ public class Etudiant {
             }
         }
         if (matiereSansNote.isEmpty())
-            System.out.println("l'étudiant " + nom + " est noté sur toutes les Matieres");
+            System.out.println("l'étudiant " + getNom() + " est noté sur toutes les Matieres");
         else {
-            System.out.println("les Matieres sans note de " + nom);
+            System.out.println("les Matieres sans note de " + getNom());
             for (int i = 0; i < matiereSansNote.size(); i++) {
                 System.out.println(matiereSansNote.get(i).getNom());
             }
@@ -140,7 +103,7 @@ public class Etudiant {
 
     //affichage des listNotes et moyenne general
     public void affichageNoteParMatiereEtMoyenne() {
-        System.out.println("\nEtudiant " + nom + " " + prenom);
+        System.out.println("\nEtudiant " + getNom() + " " + getNom());
         for (int i = 0; i < listNotes.size(); i++) {
             System.out.println("la note de la matiere " + listNotes.get(i).getMatiere().getNom() + " est " + listNotes.get(i).getNote());
         }
@@ -163,10 +126,10 @@ public class Etudiant {
     @Override
     public String toString() {
         return "Etudiant{" +
-                "nom='" + nom + '\'' +
-                ", prenom='" + prenom + '\'' +
-                ", numTel='" + numTel + '\'' +
-                ", email='" + email + '\'' +
+                "nom='" + getNom() + '\'' +
+                ", prenom='" + getPrenom() + '\'' +
+                ", numTel='" + getNumTel() + '\'' +
+                ", email='" + getEmail() + '\'' +
                 ", dateEntre='" + dateEntre + '\'' +
                 '}';
     }

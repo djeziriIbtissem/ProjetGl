@@ -167,6 +167,7 @@ public class Departement {
         }
     };
 
+    //affichage des salle par ordre de capaciter
     public void affichageTrieSalle() {
         listSalle.sort(comparerSalle);
         for (int i = 0; i < listSalle.size(); i++) {
