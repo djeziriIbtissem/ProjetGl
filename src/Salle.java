@@ -11,6 +11,9 @@ public class Salle {
         this.capacite = capacite;
     }
 
+    /**
+     * Getters ans Setters
+     **/
     public int getNumSalle() {
         return numSalle;
     }
@@ -35,6 +38,9 @@ public class Salle {
         this.reservationSalles = reservationSalles;
     }
 
+    /**
+     * Methode
+     **/
 
     //methode de rervation d'une salle par un enseignant
     public void ajouterReservation(Enseignent enseignent, Dates datesReservation) {
@@ -53,7 +59,6 @@ public class Salle {
         }
     }
 
-
     //annuler une reservation d'un enseignant
     public void annulerReservation(Enseignent enseignent) {
         for (int i = 0; i < reservationSalles.size(); i++) {
@@ -64,7 +69,7 @@ public class Salle {
     public void affichageReservation() {
         System.out.println("\nSalle " + numSalle + " ==============================================");
         for (int i = 0; i < reservationSalles.size(); i++) {
-            System.out.print("\n" + (i + 1)+"- ");
+            System.out.print("\n" + (i + 1) + "- ");
             reservationSalles.get(i).afficheReservationSalle();
         }
         if (reservationSalles.isEmpty()) {

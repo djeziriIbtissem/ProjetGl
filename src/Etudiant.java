@@ -14,6 +14,9 @@ public class Etudiant extends Personne {
     }
 
 
+    /**
+     * Getters ans Setters
+     **/
     public Dates getDateEntre() {
         return dateEntre;
     }
@@ -38,13 +41,9 @@ public class Etudiant extends Personne {
         this.listMatieres = listMatieres;
     }
 
-
-    //affichage fiche de l'etudiant
-    public void afficheFicheEtudiant() {
-        System.out.println(this);
-    }
-
-
+    /**
+     * Methode
+     **/
     //calculer la moyenne de l'etudiant
     public double calculerMoyenneGeneral() {
         double moyenne = 0;
@@ -59,7 +58,6 @@ public class Etudiant extends Personne {
         System.out.println("la moyenne est : " + calculerMoyenneGeneral());
     }
 
-
     //get une note d'une matiere donnée
     public float getNoteUneMatiere(Matiere NomMatiere) {
         for (int i = 0; i < listNotes.size(); i++) {
@@ -69,7 +67,6 @@ public class Etudiant extends Personne {
         }
         return 0;
     }
-
 
     //liste des matiere sans note de l'etudiant
     public void afficherMatiereSansNote() {
@@ -122,16 +119,10 @@ public class Etudiant extends Personne {
         matiere.addEtudiant(this);
     }
 
-
     @Override
     public String toString() {
-        return "Etudiant{" +
-                "nom='" + getNom() + '\'' +
-                ", prenom='" + getPrenom() + '\'' +
-                ", numTel='" + getNumTel() + '\'' +
-                ", email='" + getEmail() + '\'' +
-                ", dateEntre='" + dateEntre + '\'' +
-                '}';
+        return "Etudiant{" + super.toString() +
+                "dateEntre=" + dateEntre +
+                "} ";
     }
-
 }

@@ -14,6 +14,10 @@ public class Personne {
     }
 
 
+    /**
+     * Getters ans Setters
+     **/
+
     public String getNom() {
         return nom;
     }
@@ -46,13 +50,21 @@ public class Personne {
         this.email = email;
     }
 
+
+    /**
+     * Methode
+     **/
+
+    //affichage de la fiche d'une personne
+    public void afficherFiche() {
+        System.out.println(this);
+    }
+
     @Override
     public String toString() {
-        return "Personne{" +
-                "nom='" + nom + '\'' +
+        return "nom='" + nom + '\'' +
                 ", prenom='" + prenom + '\'' +
                 ", numTel='" + numTel + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+                ", email='" + email + '\'';
     }
 }

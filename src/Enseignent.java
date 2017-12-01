@@ -14,6 +14,10 @@ public class Enseignent extends Personne {
         this.grade = grade;
     }
 
+    /**
+     * Getters ans Setters
+     **/
+
 
     public Dates getDateFonction() {
         return dateFonction;
@@ -40,13 +44,12 @@ public class Enseignent extends Personne {
     }
 
 
-    //affichage de la fiche d'un enseignant
-    public void afficheFiche() {
-        System.out.println(this);
-    }
+    /**
+     * Methode
+     **/
 
     //affiche les matiere de l'enseignant
-    public void affichageMatiereParEnseignant() {
+    public void affichageMatiereEnseignant() {
 
         System.out.println("\n" + getNom() + " enseigne : ");
         for (int i = 0; i < listMatieres.size(); i++) {
@@ -54,23 +57,18 @@ public class Enseignent extends Personne {
         }
     }
 
-
+    //ajouter matiere a l'enseignant pour
     public void addMatiere(Matiere matiere) {
         listMatieres.add(matiere);
         matiere.addEnseignant(this);
     }
 
-
     @Override
     public String toString() {
-        return "Enseignent{" +
-                "nom='" + getNom() + '\'' +
-                ", prenom='" + getPrenom() + '\'' +
-                ", numTel='" + getNumTel() + '\'' +
-                ", email='" + getEmail() + '\'' +
-                ", dateFonction=" + dateFonction +
-                ", grade='" + grade + '\'' +
+        return "Enseignent{" + super.toString() +
+                "dateFonction=" + dateFonction +
+                ", grade=" + grade +
                 ", listMatieres=" + listMatieres +
-                '}';
+                "} ";
     }
 }

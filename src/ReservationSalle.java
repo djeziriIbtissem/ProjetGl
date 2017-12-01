@@ -12,6 +12,10 @@ public class ReservationSalle {
         this.listReservation.add(enseignent);
     }
 
+    /**
+     * Getters ans Setters
+     **/
+
     public Dates getDateReservation() {
         return dateReservation;
     }
@@ -36,6 +40,11 @@ public class ReservationSalle {
         this.listReservation = listReservation;
     }
 
+
+    /**
+     * Methode
+     **/
+
     //ajouter reservation d'une salle par un enseignant
     public void ajouterReservation(Enseignent enseignent) {
         if (listReservation.size() < 5) {
@@ -52,7 +61,6 @@ public class ReservationSalle {
             System.out.println("pas de reservation pour cet enseignant " + enseignent.getNom());
         }
     }
-
 
     //pour afficher toute les reservation de la salle
     public void afficheReservationSalle() {

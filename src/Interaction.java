@@ -73,7 +73,9 @@ public class Interaction {
             System.out.println("    11- Faire une reservation");
             System.out.println("    12- Annuler une reservation");
             System.out.println("    13- Affichage des reservations");
-            System.out.println("    14- Quitter");
+            System.out.println("    14- Affichage fiche enseignants");
+            System.out.println("    15- Affichage fiche  etudiants");
+            System.out.println("    16- Quitter");
 
 
             System.out.print("\nChoix : ");
@@ -141,12 +143,12 @@ public class Interaction {
                     departement2.afficherResponsable();
                     break;
                 case 4:
-                    enseignent1.affichageMatiereParEnseignant();
-                    enseignent2.affichageMatiereParEnseignant();
-                    enseignent3.affichageMatiereParEnseignant();
-                    enseignent4.affichageMatiereParEnseignant();
-                    enseignent5.affichageMatiereParEnseignant();
-                    enseignent6.affichageMatiereParEnseignant();
+                    enseignent1.affichageMatiereEnseignant();
+                    enseignent2.affichageMatiereEnseignant();
+                    enseignent3.affichageMatiereEnseignant();
+                    enseignent4.affichageMatiereEnseignant();
+                    enseignent5.affichageMatiereEnseignant();
+                    enseignent6.affichageMatiereEnseignant();
                     break;
                 case 5:
                     System.out.println("AVANT:");
@@ -170,7 +172,7 @@ public class Interaction {
                     break;
                 case 8:
                     System.out.println("AVANT:");
-                    departement1.affichageListEtudiant();
+                    departement1.affichageListEtudiants();
                     System.out.println("APRES:");
                     departement1.affichageClassementListEtudiant();
                     break;
@@ -236,13 +238,25 @@ public class Interaction {
                     departement1.getListSalle().get(choixSalle - 1).annulerReservation(departement1.getListSalle().get(choixSalle - 1).getReservationSalles().get(choixDate - 1).getListReservation().get(choixEnsaignant - 1));
                     System.out.println("Reservation annuler!");
                     break;
+
                 case 13:
                     departement1.afficherReservationSalle();
-
                     break;
+
                 case 14:
+                    System.out.println("\nFiche des enseignants:");
+                    departement1.affichageListEnseignant();
+                    break;
+
+                case 15:
+                    System.out.println("\nFiche des etudiants:");
+                    departement1.affichageListEtudiants();
+                    break;
+
+                case 16:
                     run = false;
                     break;
+
                 default:
                     System.out.println("erreur de saisi");
                     break;

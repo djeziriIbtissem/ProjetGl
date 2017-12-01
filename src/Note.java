@@ -8,6 +8,11 @@ public class Note {
         this.matiere = matiere;
     }
 
+
+    /**
+     * Getters ans Setters
+     **/
+
     public float getNote() {
         return note;
     }
@@ -23,6 +28,11 @@ public class Note {
     public void setMatiere(Matiere matiere) {
         this.matiere = matiere;
     }
+
+
+    /**
+     * Methode
+     **/
 
     @Override
     public String toString() {

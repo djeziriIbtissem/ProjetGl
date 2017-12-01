@@ -11,6 +11,10 @@ public class Ecole {
         this.nomEcole = nomEcole;
     }
 
+    /**
+     * Getters ans Setters
+     **/
+
     public String getSiteInternet() {
         return siteInternet;
     }
@@ -35,6 +39,9 @@ public class Ecole {
         this.nomEcole = nomEcole;
     }
 
+    /**
+     * Methode
+     **/
 
     //affichage des departement
     public void affichageDepartement() {
@@ -48,7 +55,6 @@ public class Ecole {
     public void addDepartement(Departement departement) {
         listDepartements.add(departement);
     }
-
 
     @Override
     public String toString() {

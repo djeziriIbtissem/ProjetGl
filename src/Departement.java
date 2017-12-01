@@ -16,6 +16,10 @@ public class Departement {
         this.responsable = responsable;
     }
 
+    /**
+     * Getters ans Setters
+     **/
+
     public String getNomDepartement() {
         return nomDepartement;
     }
@@ -48,7 +52,6 @@ public class Departement {
         this.listEtudiants = listEtudiants;
     }
 
-
     public ArrayList<Salle> getListSalle() {
         return listSalle;
     }
@@ -57,6 +60,9 @@ public class Departement {
         this.listSalle = listSalle;
     }
 
+    /**
+     * Methode
+     **/
 
     //calculer la moyenne general du departement
     public double calculerMoyenneDepartement() {
@@ -72,11 +78,11 @@ public class Departement {
         System.out.println("la moyenne general du departement est : " + calculerMoyenneDepartement());
     }
 
-    //affichage des enseingant
+    //affichage des enseingants
     public void affichageListEnseignant() {
         for (int i = 0; i < listEnseignents.size(); i++) {
             System.out.print((i + 1) + "- ");
-            listEnseignents.get(i).afficheFiche();
+            listEnseignents.get(i).afficherFiche();
         }
     }
 
@@ -85,27 +91,27 @@ public class Departement {
 
         for (int i = 0; i < listEnseignents.size(); i++) {
             if (listEnseignents.get(i).getGrade().equals(GradeEnseignant.PR)) {
-                listEnseignents.get(i).afficheFiche();
+                listEnseignents.get(i).afficherFiche();
             }
         }
         for (int i = 0; i < listEnseignents.size(); i++) {
             if (listEnseignents.get(i).getGrade().equals(GradeEnseignant.MCA)) {
-                listEnseignents.get(i).afficheFiche();
+                listEnseignents.get(i).afficherFiche();
             }
         }
         for (int i = 0; i < listEnseignents.size(); i++) {
             if (listEnseignents.get(i).getGrade().equals(GradeEnseignant.MCB)) {
-                listEnseignents.get(i).afficheFiche();
+                listEnseignents.get(i).afficherFiche();
             }
         }
         for (int i = 0; i < listEnseignents.size(); i++) {
             if (listEnseignents.get(i).getGrade().equals(GradeEnseignant.MAA)) {
-                listEnseignents.get(i).afficheFiche();
+                listEnseignents.get(i).afficherFiche();
             }
         }
         for (int i = 0; i < listEnseignents.size(); i++) {
             if (listEnseignents.get(i).getGrade().equals(GradeEnseignant.MAB)) {
-                listEnseignents.get(i).afficheFiche();
+                listEnseignents.get(i).afficherFiche();
             }
         }
     }
@@ -114,11 +120,10 @@ public class Departement {
     public void affichageEnseignantParGrade(GradeEnseignant grade) {
         for (int i = 0; i < listEnseignents.size(); i++) {
             if (listEnseignents.get(i).getGrade().equals(grade))
-                listEnseignents.get(i).afficheFiche();
+                listEnseignents.get(i).afficherFiche();
 
         }
     }
-
 
     //affichage du responsable du departement
     public void afficherResponsable() {
@@ -153,7 +158,6 @@ public class Departement {
         }
     }
 
-
     // Methode pour trier les salles par capacité
     private Comparator<Salle> comparerSalle = new Comparator<Salle>() {
         @Override
@@ -175,7 +179,6 @@ public class Departement {
 
         }
     }
-
 
     // Methode pour trier les listEtudiants par classement
     private Comparator<Etudiant> comparerEtudiant = new Comparator<Etudiant>() {
@@ -199,9 +202,16 @@ public class Departement {
     }
 
     //pour afficher la liste des etudiant
-    public void affichageListEtudiant() {
+    public void affichageListEtudiants() {
         for (int i = 0; i < listEtudiants.size(); i++) {
-            listEtudiants.get(i).afficheFicheEtudiant();
+            listEtudiants.get(i).afficherFiche();
+        }
+    }
+
+    //pour afficher la liste des enseignants
+    public void affichageListEnseignants() {
+        for (int i = 0; i < listEnseignents.size(); i++) {
+            listEnseignents.get(i).afficherFiche();
         }
     }
 

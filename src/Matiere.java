@@ -14,6 +14,11 @@ public class Matiere {
         this.salle = salle;
     }
 
+
+    /**
+     * Getters ans Setters
+     **/
+
     public String getNom() {
         return nom;
     }
@@ -46,6 +51,11 @@ public class Matiere {
         this.listEnseigant = listEnseigant;
     }
 
+    /**
+     * Methode
+     **/
+
+
     public void addEtudiant(Etudiant etudiant) {
         listEtudiants.add(etudiant);
     }
@@ -67,7 +77,6 @@ public class Matiere {
     public void affichageMoyenneMatiere() {
         System.out.println("la moyenne de la matiere " + nom + " est : " + calculeMoyenneMatiere());
     }
-
 
     @Override
     public String toString() {

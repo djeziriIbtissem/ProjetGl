@@ -11,6 +11,9 @@ public class Dates {
         this.annees = annees;
     }
 
+    /**
+     * Getters ans Setters
+     **/
 
     public int getJour() {
         return jour;
@@ -36,6 +39,9 @@ public class Dates {
         this.annees = annees;
     }
 
+    /**
+     * Methode
+     **/
 
     @Override
     public String toString() {
