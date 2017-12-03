@@ -127,7 +127,7 @@ public class Departement {
 
     //affichage du responsable du departement
     public void afficherResponsable() {
-        System.out.println("le responsabe du departement " + getNomDepartement() + " est : " + getResponsable().getNom());
+        System.out.println("le responsabe du departement " + nomDepartement + " est : " + responsable.getNom());
     }
 
     //affichage des salles
@@ -158,7 +158,7 @@ public class Departement {
         }
     }
 
-    // Methode pour trier les salles par capacité
+    // Methode pour trier la liste des salles par capacité
     private Comparator<Salle> comparerSalle = new Comparator<Salle>() {
         @Override
         public int compare(Salle o1, Salle o2) {
@@ -171,7 +171,6 @@ public class Departement {
         }
     };
 
-    //affichage des salle par ordre de capaciter
     public void affichageTrieSalle() {
         listSalle.sort(comparerSalle);
         for (int i = 0; i < listSalle.size(); i++) {
@@ -180,7 +179,7 @@ public class Departement {
         }
     }
 
-    // Methode pour trier les listEtudiants par classement
+    // Methode pour trier la liste des Etudiants par classement
     private Comparator<Etudiant> comparerEtudiant = new Comparator<Etudiant>() {
         @Override
         public int compare(Etudiant o1, Etudiant o2) {

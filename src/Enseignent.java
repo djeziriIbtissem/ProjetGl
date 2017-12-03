@@ -50,7 +50,6 @@ public class Enseignent extends Personne {
 
     //affiche les matiere de l'enseignant
     public void affichageMatiereEnseignant() {
-
         System.out.println("\n" + getNom() + " enseigne : ");
         for (int i = 0; i < listMatieres.size(); i++) {
             System.out.println("-la matiere " + listMatieres.get(i).getNom());

@@ -102,7 +102,7 @@ public class Etudiant extends Personne {
 
     //affichage des listNotes et moyenne general
     public void affichageNoteParMatiereEtMoyenne() {
-        System.out.println("\nEtudiant " + getNom() + " " + getNom());
+        System.out.println("\nEtudiant " + getNom() + " " + getPrenom());
         for (int i = 0; i < listNotes.size(); i++) {
             System.out.println("la note de la matiere " + listNotes.get(i).getMatiere().getNom() + " est " + listNotes.get(i).getNote());
         }
