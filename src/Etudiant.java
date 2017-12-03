@@ -17,6 +17,7 @@ public class Etudiant extends Personne {
     /**
      * Getters ans Setters
      **/
+
     public Dates getDateEntre() {
         return dateEntre;
     }
@@ -44,6 +45,7 @@ public class Etudiant extends Personne {
     /**
      * Methode
      **/
+
     //calculer la moyenne de l'etudiant
     public double calculerMoyenneGeneral() {
         double moyenne = 0;
